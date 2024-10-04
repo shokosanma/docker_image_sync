@@ -46,6 +46,5 @@ if __name__ == "__main__":
     salt = random.randint(100000, 999999)
     message = '{"password": "'+password+'", "salt": '+str(salt)+'}'
     encrypted_message = encrypt_with_public_key(public_key, message)
-    print("Encrypted Message:", encrypted_message)
     encrypted_message = base64.b64encode(encrypted_message).decode('utf-8')
     request_for_image(image=args.image, encrypted_message=encrypted_message)
